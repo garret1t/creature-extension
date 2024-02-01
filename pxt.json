@@ -2,8 +2,7 @@
     "name": "Creature Extension",
     "description": "",
     "dependencies": {
-        "device": "*",
-        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.2.1"
+        "device": "*"
     },
     "files": [
         "main.blocks",
@@ -22,5 +21,5 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "tsprj"
+    "preferredEditor": "blocksprj"
 }
