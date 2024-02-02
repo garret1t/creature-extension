@@ -53,6 +53,7 @@ namespace creatures{
     export class Creature{
         public _sprite: Sprite;
         public _creatureType: CreatureType;
+<<<<<<< HEAD
         public _name: string; 
 
         public _xp: number;
@@ -73,12 +74,32 @@ namespace creatures{
             this._sayHP = false;
             this._sayXP = false;
             this._sprite.setFlag(SpriteFlag.Invisible, true);
+=======
+        public _xp: number;
+        public _hp: number;
+        public _attackValue: number;
+
+        public _sayHP: boolean;
+        public _sayXP: boolean;
+
+        constructor(spr: Sprite, cType: CreatureType) {
+            this._sprite = spr;
+            this._creatureType = cType;
+            this._xp = 0;
+            this._hp = 20;
+            this._attackValue = 5;
+            this._sayHP = false;
+            this._sayXP = false;
+>>>>>>> master
             game.onUpdate(function () {
                 this.update()
             })
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         
         
         update(){
@@ -120,6 +141,7 @@ namespace creatures{
         }
 
         //% group="Value" blockSetVariable="myCreature"
+<<<<<<< HEAD
         //% blockCombine block="name" callInDebugger
         get name() {
             return this._name;
@@ -130,6 +152,8 @@ namespace creatures{
         }
 
         //% group="Value" blockSetVariable="myCreature"
+=======
+>>>>>>> master
         //% blockCombine block="xp" callInDebugger
         get xp() {
             return this._xp;
@@ -159,6 +183,7 @@ namespace creatures{
             this._attackValue = attackValue;
         }
 
+<<<<<<< HEAD
         //% group="Value" blockSetVariable="myCreature"
         //% blockCombine block="xpReward" callInDebugger
         get xpReward() {
@@ -169,6 +194,8 @@ namespace creatures{
             this._xpReward = xpReward;
         }
 
+=======
+>>>>>>> master
         //% block="set $this(myCreature) Say HP $sayHP=toggleOnOff"
         //% blockId="creatures_setSayHP"
         setSayHP(sayHP: boolean){
@@ -190,13 +217,22 @@ namespace creatures{
 
 
     //% blockId=makeCreatureFromSprite 
+<<<<<<< HEAD
     //%block="make creature from $sprite=variables_get of type %creatureType with name $name || xp $xp hp $hp attackValue $attackValue"
+=======
+    //%block="make creature from $sprite=variables_get of type %creatureType"
+>>>>>>> master
     //% expandableArgumentMode=toggle
     //% blockSetVariable=myCreature
     //% group="Create"
     //% weight=100
+<<<<<<< HEAD
     export function makeCreatureFromSprite(sprite: Sprite, creatureType: CreatureType, name: string, xp: number = 0, hp: number = 20, attackValue: number = 5, xpReward: number = 10): Creature {
         return new Creature(sprite, creatureType, name);
+=======
+    export function makeCreatureFromSprite(sprite: Sprite, creatureType: CreatureType): Creature {
+        return new Creature(sprite, creatureType);
+>>>>>>> master
     }
 
 
@@ -243,6 +279,7 @@ namespace creatures{
     //% weight=80
     export function creatureBattleCreature(creature1: Creature, creature2: Creature) {
         let turn: number = 0;
+<<<<<<< HEAD
         let map: tiles.TileMapData = game.currentScene().tileMap.data;
         tiles.setCurrentTilemap(tilemap` `)
         scene.setBackgroundImage(img`
@@ -406,6 +443,8 @@ namespace creatures{
         game.showLongText("A wild " + creature2.name + " appeared.", DialogLayout.Bottom)
         game.showLongText("You sent out " + creature1.name + " to battle!", DialogLayout.Bottom)
         //picture.fillRect(0, 0, 0, 0, 0)
+=======
+>>>>>>> master
         while (creature1.hp > 0 && creature2.hp > 0) {            
             pause(200)
             if(turn ==0){
@@ -442,6 +481,7 @@ namespace creatures{
                 turn = 0;
             }
         }
+<<<<<<< HEAD
         if (creature1.hp > 0) {
             game.showLongText(creature1.name + " knocked out " + creature2.name + " and earned " + creature2.xpReward + " xp.", DialogLayout.Bottom)
             creature1.xp += creature2.xpReward;
@@ -578,6 +618,9 @@ namespace creatures{
             ................................................................................................................................................................
         `);
         tiles.setCurrentTilemap(map)
+=======
+
+>>>>>>> master
     }
     
 }

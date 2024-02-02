@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 namespace SpriteKind {
     export const Grass = SpriteKind.create()
 }
@@ -337,6 +338,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Grass, function (sprite, otherSp
     }
 })
 let myPlayer: Sprite = null
+=======
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    creatures.creatureBattleCreature(pikachuCreature, charmanderCreature)
+})
+>>>>>>> master
 let charmanderCreature: creatures.Creature = null
 let pikachuCreature: creatures.Creature = null
 let pikachu = sprites.create(img`
@@ -362,6 +368,10 @@ let pikachu = sprites.create(img`
     .........f5fff......
     ..........f.........
     `, SpriteKind.Creature)
+<<<<<<< HEAD
+=======
+pikachu.setPosition(68, 55)
+>>>>>>> master
 let charmander = sprites.create(img`
     ....ffff.........f...
     ...f4444f.......f2f..
@@ -383,6 +393,7 @@ let charmander = sprites.create(img`
     .........f141f.......
     ..........ffff.......
     `, SpriteKind.Creature)
+<<<<<<< HEAD
 pikachuCreature = creatures.makeCreatureFromSprite(
 pikachu,
 CreatureType.Electric,
@@ -416,3 +427,10 @@ tileUtil.createSpritesOnTiles(assets.tile`myTile4`, img`
 myPlayer.z = 90
 tiles.placeOnTile(myPlayer, tiles.getTileLocation(32, 32))
 scene.cameraFollowSprite(myPlayer)
+=======
+charmander.setPosition(92, 55)
+pikachuCreature = creatures.makeCreatureFromSprite(pikachu, CreatureType.Electric)
+charmanderCreature = creatures.makeCreatureFromSprite(charmander, CreatureType.Fire)
+pikachuCreature.setSayHP(true)
+charmanderCreature.setSayHP(true)
+>>>>>>> master
